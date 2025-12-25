@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - GUVI Internship</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-5">
+                <div class="card shadow-lg p-4">
+                    <h2 class="text-center mb-4 text-primary">Create Account</h2>
+                    
+                    <div class="alert alert-danger d-none" id="registerError" role="alert"></div>
+                    <div class="alert alert-success d-none" id="registerSuccess" role="alert"></div>
+
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="registerEmail" placeholder="Enter your email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" placeholder="Enter password (min 6 characters)">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password">
+                    </div>
+
+                    <button class="btn btn-primary w-100 mb-3" id="registerBtn" type="button">Register</button>
+
+                    <p class="text-center text-muted">
+                        Already have an account? <a href="login.html" class="text-decoration-none">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

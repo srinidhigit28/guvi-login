@@ -1,0 +1,387 @@
+[Wed Dec 24 15:00:05 2025] PHP 8.2.12 Development Server (http://localhost:8000) started
+[Wed Dec 24 15:05:00 2025] [::1]:57223 Accepted
+[Wed Dec 24 15:05:04 2025] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in D:\SRINIDHI DOCUMENT\login guvi\php\register.php:95
+Stack trace:
+#0 D:\SRINIDHI DOCUMENT\login guvi\php\register.php(95): mysqli_stmt->execute()
+#1 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\php\register.php on line 95
+[Wed Dec 24 15:05:04 2025] [::1]:57223 [200]: POST /php/register.php - Uncaught mysqli_sql_exception: MySQL server has gone away in D:\SRINIDHI DOCUMENT\login guvi\php\register.php:95
+Stack trace:
+#0 D:\SRINIDHI DOCUMENT\login guvi\php\register.php(95): mysqli_stmt->execute()
+#1 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\php\register.php on line 95
+[Wed Dec 24 15:05:04 2025] [::1]:57223 Closing
+[Wed Dec 24 15:16:53 2025] [::1]:53705 Accepted
+[Wed Dec 24 15:16:53 2025] [::1]:53705 [200]: GET /register.html
+[Wed Dec 24 15:16:53 2025] [::1]:56944 Accepted
+[Wed Dec 24 15:16:53 2025] [::1]:53705 Closing
+[Wed Dec 24 15:16:54 2025] [::1]:56944 [200]: GET /css/style.css
+[Wed Dec 24 15:16:54 2025] [::1]:62768 Accepted
+[Wed Dec 24 15:16:54 2025] [::1]:62768 [200]: GET /js/register.js
+[Wed Dec 24 15:16:54 2025] [::1]:56944 Closing
+[Wed Dec 24 15:16:54 2025] [::1]:62768 Closing
+[Wed Dec 24 15:16:57 2025] [::1]:50895 Accepted
+[Wed Dec 24 15:16:57 2025] [::1]:56282 Accepted
+[Wed Dec 24 15:16:57 2025] [::1]:50895 [200]: GET /register.html
+[Wed Dec 24 15:16:57 2025] [::1]:50895 Closing
+[Wed Dec 24 15:16:57 2025] [::1]:56282 [200]: GET /css/style.css
+[Wed Dec 24 15:16:57 2025] [::1]:56282 Closing
+[Wed Dec 24 15:16:57 2025] [::1]:56586 Accepted
+[Wed Dec 24 15:16:57 2025] [::1]:56586 [200]: GET /js/register.js
+[Wed Dec 24 15:16:57 2025] [::1]:56586 Closing
+[Wed Dec 24 15:17:29 2025] [::1]:55883 Accepted
+[Wed Dec 24 15:17:30 2025] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown database 'guvi_internship' in D:\SRINIDHI DOCUMENT\login guvi\php\register.php:53
+Stack trace:
+#0 D:\SRINIDHI DOCUMENT\login guvi\php\register.php(53): mysqli->__construct('127.0.0.1', 'root', Object(SensitiveParameterValue), 'guvi_internship')
+#1 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\php\register.php on line 53
+[Wed Dec 24 15:17:30 2025] [::1]:55883 [200]: POST /php/register.php - Uncaught mysqli_sql_exception: Unknown database 'guvi_internship' in D:\SRINIDHI DOCUMENT\login guvi\php\register.php:53
+Stack trace:
+#0 D:\SRINIDHI DOCUMENT\login guvi\php\register.php(53): mysqli->__construct('127.0.0.1', 'root', Object(SensitiveParameterValue), 'guvi_internship')
+#1 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\php\register.php on line 53
+[Wed Dec 24 15:17:30 2025] [::1]:55883 Closing
+[Wed Dec 24 15:17:38 2025] [::1]:50648 Accepted
+[Wed Dec 24 15:17:38 2025] [::1]:59685 Accepted
+[Wed Dec 24 15:18:00 2025] [::1]:50648 [200]: GET /css/style.css
+[Wed Dec 24 15:18:00 2025] [::1]:50648 Closing
+[Wed Dec 24 15:18:00 2025] [::1]:59685 [404]: GET /.well-known/appspecific/com.chrome.devtools.json - No such file or directory
+[Wed Dec 24 15:18:00 2025] [::1]:59685 Closing
+[Wed Dec 24 15:21:21 2025] [::1]:59870 Accepted
+[Wed Dec 24 15:21:22 2025] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown database 'guvi_internship' in D:\SRINIDHI DOCUMENT\login guvi\php\register.php:53
+Stack trace:
+#0 D:\SRINIDHI DOCUMENT\login guvi\php\register.php(53): mysqli->__construct('127.0.0.1', 'root', Object(SensitiveParameterValue), 'guvi_internship')
+#1 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\php\register.php on line 53
+[Wed Dec 24 15:21:22 2025] [::1]:59870 [200]: POST /php/register.php - Uncaught mysqli_sql_exception: Unknown database 'guvi_internship' in D:\SRINIDHI DOCUMENT\login guvi\php\register.php:53
+Stack trace:
+#0 D:\SRINIDHI DOCUMENT\login guvi\php\register.php(53): mysqli->__construct('127.0.0.1', 'root', Object(SensitiveParameterValue), 'guvi_internship')
+#1 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\php\register.php on line 53
+[Wed Dec 24 15:21:22 2025] [::1]:59870 Closing
+[Wed Dec 24 15:25:16 2025] [::1]:55663 Accepted
+[Wed Dec 24 15:25:16 2025] [::1]:55663 [200]: POST /php/register.php
+[Wed Dec 24 15:25:16 2025] [::1]:55663 Closing
+[Wed Dec 24 15:25:22 2025] [::1]:50734 Accepted
+[Wed Dec 24 15:25:22 2025] PHP Fatal error:  Uncaught Error: Class "Redis" not found in D:\SRINIDHI DOCUMENT\login guvi\php\login.php:81
+Stack trace:
+#0 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\php\login.php on line 81
+[Wed Dec 24 15:25:22 2025] [::1]:50734 [200]: POST /php/login.php - Uncaught Error: Class "Redis" not found in D:\SRINIDHI DOCUMENT\login guvi\php\login.php:81
+Stack trace:
+#0 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\php\login.php on line 81
+[Wed Dec 24 15:25:22 2025] [::1]:50734 Closing
+[Wed Dec 24 15:25:53 2025] [::1]:58583 Accepted
+[Wed Dec 24 15:25:53 2025] [::1]:58583 [200]: POST /php/login.php
+[Wed Dec 24 15:25:53 2025] [::1]:58583 Closing
+[Wed Dec 24 15:25:59 2025] [::1]:51501 Accepted
+[Wed Dec 24 15:25:59 2025] PHP Fatal error:  Uncaught Error: Class "MongoDB\Database" not found in D:\SRINIDHI DOCUMENT\login guvi\vendor\mongodb-stubs\Client.php:20
+Stack trace:
+#0 D:\SRINIDHI DOCUMENT\login guvi\php\profile.php(81): MongoDB\Client->__get('guvi_internship')
+#1 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\vendor\mongodb-stubs\Client.php on line 20
+[Wed Dec 24 15:25:59 2025] [::1]:51501 [200]: POST /php/profile.php - Uncaught Error: Class "MongoDB\Database" not found in D:\SRINIDHI DOCUMENT\login guvi\vendor\mongodb-stubs\Client.php:20
+Stack trace:
+#0 D:\SRINIDHI DOCUMENT\login guvi\php\profile.php(81): MongoDB\Client->__get('guvi_internship')
+#1 {main}
+  thrown in D:\SRINIDHI DOCUMENT\login guvi\vendor\mongodb-stubs\Client.php on line 20
+[Wed Dec 24 15:25:59 2025] [::1]:51501 Closing
+[Wed Dec 24 15:26:48 2025] [::1]:51349 Accepted
+[Wed Dec 24 15:26:48 2025] PHP Parse error:  syntax error, unexpected token "namespace" in D:\SRINIDHI DOCUMENT\login guvi\vendor\autoload.php on line 9
+[Wed Dec 24 15:26:48 2025] [::1]:51349 [200]: POST /php/profile.php - syntax error, unexpected token "namespace" in D:\SRINIDHI DOCUMENT\login guvi\vendor\autoload.php on line 9
+[Wed Dec 24 15:26:48 2025] [::1]:51349 Closing
+[Wed Dec 24 15:30:02 2025] [::1]:49791 Accepted
+[Wed Dec 24 15:30:02 2025] [::1]:49791 [200]: POST /php/profile.php
+[Wed Dec 24 15:30:02 2025] [::1]:49791 Closing
+[Wed Dec 24 15:30:13 2025] [::1]:64995 Accepted
+[Wed Dec 24 15:30:13 2025] [::1]:64995 [200]: POST /php/profile.php
+[Wed Dec 24 15:30:13 2025] [::1]:64995 Closing
+[Wed Dec 24 15:30:29 2025] [::1]:54144 Accepted
+[Wed Dec 24 15:30:29 2025] [::1]:54144 [200]: POST /php/profile.php
+[Wed Dec 24 15:30:29 2025] [::1]:54144 Closing
+[Wed Dec 24 15:30:47 2025] [::1]:51553 Accepted
+[Wed Dec 24 15:30:47 2025] [::1]:51553 [200]: GET /register.html
+[Wed Dec 24 15:30:47 2025] [::1]:51553 Closing
+[Wed Dec 24 15:30:47 2025] [::1]:64494 Accepted
+[Wed Dec 24 15:30:47 2025] [::1]:56525 Accepted
+[Wed Dec 24 15:30:47 2025] [::1]:64494 [200]: GET /css/style.css
+[Wed Dec 24 15:30:47 2025] [::1]:64494 Closing
+[Wed Dec 24 15:30:47 2025] [::1]:56525 [200]: GET /js/register.js
+[Wed Dec 24 15:30:47 2025] [::1]:56525 Closing
+[Wed Dec 24 15:31:13 2025] [::1]:64179 Accepted
+[Wed Dec 24 15:31:13 2025] [::1]:64179 [200]: POST /php/register.php
+[Wed Dec 24 15:31:13 2025] [::1]:64179 Closing
+[Wed Dec 24 15:31:15 2025] [::1]:63616 Accepted
+[Wed Dec 24 15:31:15 2025] [::1]:63616 [200]: GET /login.html
+[Wed Dec 24 15:31:15 2025] [::1]:59610 Accepted
+[Wed Dec 24 15:31:15 2025] [::1]:63616 Closing
+[Wed Dec 24 15:31:15 2025] [::1]:59610 [200]: GET /css/style.css
+[Wed Dec 24 15:31:15 2025] [::1]:59610 Closing
+[Wed Dec 24 15:31:15 2025] [::1]:62745 Accepted
+[Wed Dec 24 15:31:15 2025] [::1]:62745 [200]: GET /js/login.js
+[Wed Dec 24 15:31:15 2025] [::1]:62745 Closing
+[Wed Dec 24 15:31:32 2025] [::1]:50595 Accepted
+[Wed Dec 24 15:31:32 2025] [::1]:50595 [200]: POST /php/login.php
+[Wed Dec 24 15:31:32 2025] [::1]:50595 Closing
+[Wed Dec 24 15:31:33 2025] [::1]:65349 Accepted
+[Wed Dec 24 15:31:33 2025] [::1]:65349 [200]: GET /profile.html
+[Wed Dec 24 15:31:33 2025] [::1]:59946 Accepted
+[Wed Dec 24 15:31:33 2025] [::1]:65349 Closing
+[Wed Dec 24 15:31:33 2025] [::1]:59946 [200]: GET /css/style.css
+[Wed Dec 24 15:31:33 2025] [::1]:59946 Closing
+[Wed Dec 24 15:31:33 2025] [::1]:63189 Accepted
+[Wed Dec 24 15:31:34 2025] [::1]:63189 [200]: GET /js/profile.js
+[Wed Dec 24 15:31:34 2025] [::1]:63189 Closing
+[Wed Dec 24 15:31:34 2025] [::1]:60794 Accepted
+[Wed Dec 24 15:31:34 2025] [::1]:60794 [200]: POST /php/profile.php
+[Wed Dec 24 15:31:34 2025] [::1]:60794 Closing
+[Wed Dec 24 15:32:57 2025] [::1]:55521 Accepted
+[Wed Dec 24 15:32:57 2025] [::1]:55521 [200]: POST /php/profile.php
+[Wed Dec 24 15:32:57 2025] [::1]:55521 Closing
+[Wed Dec 24 15:32:59 2025] [::1]:63568 Accepted
+[Wed Dec 24 15:32:59 2025] [::1]:63568 [200]: POST /php/profile.php
+[Wed Dec 24 15:32:59 2025] [::1]:63568 Closing
+[Wed Dec 24 15:33:14 2025] [::1]:61432 Accepted
+[Wed Dec 24 15:33:14 2025] [::1]:55482 Accepted
+[Wed Dec 24 15:33:14 2025] [::1]:61432 [200]: GET /login.html
+[Wed Dec 24 15:33:14 2025] [::1]:61432 Closing
+[Wed Dec 24 15:33:14 2025] [::1]:55482 [200]: GET /css/style.css
+[Wed Dec 24 15:33:14 2025] [::1]:55482 Closing
+[Wed Dec 24 15:33:14 2025] [::1]:59023 Accepted
+[Wed Dec 24 15:33:14 2025] [::1]:59023 [200]: GET /js/login.js
+[Wed Dec 24 15:33:14 2025] [::1]:59023 Closing
+[Wed Dec 24 15:33:26 2025] [::1]:57837 Accepted
+[Wed Dec 24 15:33:26 2025] [::1]:57837 [200]: POST /php/login.php
+[Wed Dec 24 15:33:26 2025] [::1]:57837 Closing
+[Wed Dec 24 15:33:28 2025] [::1]:63237 Accepted
+[Wed Dec 24 15:33:28 2025] [::1]:60075 Accepted
+[Wed Dec 24 15:33:28 2025] [::1]:63237 [200]: GET /profile.html
+[Wed Dec 24 15:33:28 2025] [::1]:63237 Closing
+[Wed Dec 24 15:33:28 2025] [::1]:60075 [200]: GET /css/style.css
+[Wed Dec 24 15:33:28 2025] [::1]:60075 Closing
+[Wed Dec 24 15:33:28 2025] [::1]:56017 Accepted
+[Wed Dec 24 15:33:28 2025] [::1]:56017 [200]: GET /js/profile.js
+[Wed Dec 24 15:33:28 2025] [::1]:56017 Closing
+[Wed Dec 24 15:33:28 2025] [::1]:53542 Accepted
+[Wed Dec 24 15:33:28 2025] [::1]:53542 [200]: POST /php/profile.php
+[Wed Dec 24 15:33:28 2025] [::1]:53542 Closing
+[Wed Dec 24 15:48:02 2025] [::1]:53343 Accepted
+[Wed Dec 24 15:48:02 2025] [::1]:53343 [200]: GET /php/profile.php
+[Wed Dec 24 15:48:02 2025] [::1]:53343 Closing
+[Wed Dec 24 15:48:02 2025] [::1]:55631 Accepted
+[Wed Dec 24 15:48:06 2025] [::1]:55631 Closed without sending a request; it was probably just an unused speculative preconnection
+[Wed Dec 24 15:48:06 2025] [::1]:55631 Closing
+[Wed Dec 24 15:49:10 2025] [::1]:60591 Accepted
+[Wed Dec 24 15:49:10 2025] [::1]:60591 [200]: GET /register.html
+[Wed Dec 24 15:49:10 2025] [::1]:62962 Accepted
+[Wed Dec 24 15:49:10 2025] [::1]:60591 Closing
+[Wed Dec 24 15:49:30 2025] [::1]:62962 [200]: GET /profile.html
+[Wed Dec 24 15:49:30 2025] [::1]:62962 Closing
+[Wed Dec 24 15:49:30 2025] [::1]:60538 Accepted
+[Wed Dec 24 15:49:30 2025] [::1]:52295 Accepted
+[Wed Dec 24 15:49:30 2025] [::1]:60538 [200]: GET /css/style.css
+[Wed Dec 24 15:49:30 2025] [::1]:60538 Closing
+[Wed Dec 24 15:49:30 2025] [::1]:52295 [200]: GET /js/profile.js
+[Wed Dec 24 15:49:30 2025] [::1]:52295 Closing
+[Wed Dec 24 15:49:30 2025] [::1]:60302 Accepted
+[Wed Dec 24 15:49:30 2025] [::1]:60302 [200]: POST /php/profile.php
+[Wed Dec 24 15:49:30 2025] [::1]:60302 Closing
+[Wed Dec 24 15:49:33 2025] [::1]:53251 Accepted
+[Wed Dec 24 15:49:33 2025] [::1]:60152 Accepted
+[Wed Dec 24 15:49:35 2025] [::1]:53251 [200]: GET /register.html
+[Wed Dec 24 15:49:35 2025] [::1]:53251 Closing
+[Wed Dec 24 15:49:41 2025] [::1]:60152 Closed without sending a request; it was probably just an unused speculative preconnection
+[Wed Dec 24 15:49:41 2025] [::1]:60152 Closing
+[Wed Dec 24 15:51:28 2025] [::1]:56486 Accepted
+[Wed Dec 24 15:51:28 2025] [::1]:56486 [200]: GET /index.html
+[Wed Dec 24 15:51:28 2025] [::1]:56486 Closing
+[Wed Dec 24 15:51:28 2025] [::1]:57786 Accepted
+[Wed Dec 24 15:51:28 2025] [::1]:57786 [200]: GET /css/style.css
+[Wed Dec 24 15:51:28 2025] [::1]:57786 Closing
+[Wed Dec 24 15:51:38 2025] [::1]:54243 Accepted
+[Wed Dec 24 15:51:38 2025] [::1]:54243 [200]: GET /login.html
+[Wed Dec 24 15:51:38 2025] [::1]:61365 Accepted
+[Wed Dec 24 15:51:38 2025] [::1]:54243 Closing
+[Wed Dec 24 15:51:38 2025] [::1]:61365 [200]: GET /css/style.css
+[Wed Dec 24 15:51:38 2025] [::1]:61365 Closing
+[Wed Dec 24 15:51:38 2025] [::1]:54581 Accepted
+[Wed Dec 24 15:51:38 2025] [::1]:54581 [200]: GET /js/login.js
+[Wed Dec 24 15:51:38 2025] [::1]:54581 Closing
+[Wed Dec 24 15:51:55 2025] [::1]:55724 Accepted
+[Wed Dec 24 15:51:56 2025] [::1]:55724 [200]: POST /php/login.php
+[Wed Dec 24 15:51:56 2025] [::1]:55724 Closing
+[Wed Dec 24 15:51:57 2025] [::1]:49670 Accepted
+[Wed Dec 24 15:51:57 2025] [::1]:49670 [200]: GET /profile.html
+[Wed Dec 24 15:51:57 2025] [::1]:55139 Accepted
+[Wed Dec 24 15:51:57 2025] [::1]:49670 Closing
+[Wed Dec 24 15:51:57 2025] [::1]:55139 [200]: GET /css/style.css
+[Wed Dec 24 15:51:57 2025] [::1]:55139 Closing
+[Wed Dec 24 15:51:57 2025] [::1]:52432 Accepted
+[Wed Dec 24 15:51:57 2025] [::1]:52432 [200]: GET /js/profile.js
+[Wed Dec 24 15:51:57 2025] [::1]:52432 Closing
+[Wed Dec 24 15:51:57 2025] [::1]:51431 Accepted
+[Wed Dec 24 15:51:57 2025] [::1]:51431 [200]: POST /php/profile.php
+[Wed Dec 24 15:51:57 2025] [::1]:51431 Closing
+[Wed Dec 24 15:52:07 2025] [::1]:61843 Accepted
+[Wed Dec 24 15:52:07 2025] [::1]:51501 Accepted
+[Wed Dec 24 15:52:07 2025] [::1]:61843 [200]: GET /login.html
+[Wed Dec 24 15:52:07 2025] [::1]:61843 Closing
+[Wed Dec 24 15:52:07 2025] [::1]:51501 [200]: GET /css/style.css
+[Wed Dec 24 15:52:07 2025] [::1]:51501 Closing
+[Wed Dec 24 15:52:07 2025] [::1]:56253 Accepted
+[Wed Dec 24 15:52:07 2025] [::1]:56253 [200]: GET /js/login.js
+[Wed Dec 24 15:52:07 2025] [::1]:56253 Closing
+[Wed Dec 24 15:52:30 2025] [::1]:53783 Accepted
+[Wed Dec 24 15:52:30 2025] [::1]:53783 [200]: GET /css/style.css
+[Wed Dec 24 15:52:30 2025] [::1]:53783 Closing
+[Wed Dec 24 15:52:30 2025] [::1]:54542 Accepted
+[Wed Dec 24 15:52:30 2025] [::1]:54542 [404]: GET /.well-known/appspecific/com.chrome.devtools.json - No such file or directory
+[Wed Dec 24 15:52:30 2025] [::1]:54542 Closing
+[Wed Dec 24 16:08:36 2025] [::1]:49941 Accepted
+[Wed Dec 24 16:08:36 2025] [::1]:49941 [200]: GET /index.html
+[Wed Dec 24 16:08:36 2025] [::1]:52793 Accepted
+[Wed Dec 24 16:08:36 2025] [::1]:49941 Closing
+[Wed Dec 24 16:08:36 2025] [::1]:52793 [200]: GET /css/style.css
+[Wed Dec 24 16:08:36 2025] [::1]:52793 Closing
+[Wed Dec 24 16:08:42 2025] [::1]:50390 Accepted
+[Wed Dec 24 16:08:42 2025] [::1]:50390 [200]: GET /register.html
+[Wed Dec 24 16:08:42 2025] [::1]:65200 Accepted
+[Wed Dec 24 16:08:42 2025] [::1]:50390 Closing
+[Wed Dec 24 16:08:42 2025] [::1]:65200 [200]: GET /css/style.css
+[Wed Dec 24 16:08:42 2025] [::1]:65200 Closing
+[Wed Dec 24 16:08:42 2025] [::1]:63234 Accepted
+[Wed Dec 24 16:08:42 2025] [::1]:63234 [200]: GET /js/register.js
+[Wed Dec 24 16:08:42 2025] [::1]:63234 Closing
+[Wed Dec 24 16:08:49 2025] [::1]:52642 Accepted
+[Wed Dec 24 16:08:49 2025] [::1]:52642 [200]: GET /login.html
+[Wed Dec 24 16:08:49 2025] [::1]:59178 Accepted
+[Wed Dec 24 16:08:49 2025] [::1]:52642 Closing
+[Wed Dec 24 16:08:49 2025] [::1]:59178 [200]: GET /css/style.css
+[Wed Dec 24 16:08:49 2025] [::1]:59178 Closing
+[Wed Dec 24 16:08:49 2025] [::1]:63368 Accepted
+[Wed Dec 24 16:08:49 2025] [::1]:63368 [200]: GET /js/login.js
+[Wed Dec 24 16:08:49 2025] [::1]:63368 Closing
+[Wed Dec 24 16:15:53 2025] [::1]:59164 Accepted
+[Wed Dec 24 16:15:53 2025] [::1]:59164 [200]: GET /login.html
+[Wed Dec 24 16:15:53 2025] [::1]:64992 Accepted
+[Wed Dec 24 16:15:53 2025] [::1]:59164 Closing
+[Wed Dec 24 16:15:53 2025] [::1]:64992 [200]: GET /css/style.css
+[Wed Dec 24 16:15:53 2025] [::1]:64992 Closing
+[Wed Dec 24 16:15:53 2025] [::1]:52304 Accepted
+[Wed Dec 24 16:15:53 2025] [::1]:52304 [200]: GET /js/login.js
+[Wed Dec 24 16:15:53 2025] [::1]:52304 Closing
+[Wed Dec 24 16:21:44 2025] [::1]:51207 Accepted
+[Wed Dec 24 16:21:44 2025] [::1]:51207 [200]: GET /index.html
+[Wed Dec 24 16:21:44 2025] [::1]:51207 Closing
+[Wed Dec 24 16:21:44 2025] [::1]:60269 Accepted
+[Wed Dec 24 16:21:44 2025] [::1]:56220 Accepted
+[Wed Dec 24 16:21:44 2025] [::1]:60269 [200]: GET /css/style.css
+[Wed Dec 24 16:21:44 2025] [::1]:60269 Closing
+[Wed Dec 24 16:21:44 2025] [::1]:56220 [404]: GET /favicon.ico - No such file or directory
+[Wed Dec 24 16:21:44 2025] [::1]:56220 Closing
+[Wed Dec 24 16:21:46 2025] [::1]:53084 Accepted
+[Wed Dec 24 16:21:46 2025] [::1]:53084 [200]: GET /login.html
+[Wed Dec 24 16:21:46 2025] [::1]:53084 Closing
+[Wed Dec 24 16:21:46 2025] [::1]:55127 Accepted
+[Wed Dec 24 16:21:46 2025] [::1]:50807 Accepted
+[Wed Dec 24 16:21:46 2025] [::1]:55127 [200]: GET /css/style.css
+[Wed Dec 24 16:21:46 2025] [::1]:55127 Closing
+[Wed Dec 24 16:21:46 2025] [::1]:50807 [200]: GET /js/login.js
+[Wed Dec 24 16:21:46 2025] [::1]:50807 Closing
+[Wed Dec 24 16:23:35 2025] [::1]:61858 Accepted
+[Wed Dec 24 16:23:35 2025] [::1]:61858 [200]: POST /php/login.php
+[Wed Dec 24 16:23:35 2025] [::1]:61858 Closing
+[Wed Dec 24 16:23:44 2025] [::1]:59286 Accepted
+[Wed Dec 24 16:23:44 2025] [::1]:59286 [200]: POST /php/login.php
+[Wed Dec 24 16:23:44 2025] [::1]:59286 Closing
+[Wed Dec 24 16:23:52 2025] [::1]:62373 Accepted
+[Wed Dec 24 16:23:52 2025] [::1]:62373 [200]: GET /register.html
+[Wed Dec 24 16:23:52 2025] [::1]:65339 Accepted
+[Wed Dec 24 16:23:52 2025] [::1]:62373 Closing
+[Wed Dec 24 16:23:52 2025] [::1]:65339 [200]: GET /css/style.css
+[Wed Dec 24 16:23:52 2025] [::1]:65339 Closing
+[Wed Dec 24 16:23:52 2025] [::1]:62248 Accepted
+[Wed Dec 24 16:23:52 2025] [::1]:62248 [200]: GET /js/register.js
+[Wed Dec 24 16:23:52 2025] [::1]:62248 Closing
+[Wed Dec 24 16:24:02 2025] [::1]:65214 Accepted
+[Wed Dec 24 16:24:02 2025] [::1]:65214 [200]: GET /index.html
+[Wed Dec 24 16:24:02 2025] [::1]:65214 Closing
+[Wed Dec 24 16:24:02 2025] [::1]:53004 Accepted
+[Wed Dec 24 16:24:02 2025] [::1]:64317 Accepted
+[Wed Dec 24 16:24:02 2025] [::1]:53004 [200]: GET /css/style.css
+[Wed Dec 24 16:24:02 2025] [::1]:53004 Closing
+[Wed Dec 24 16:24:02 2025] [::1]:64317 [404]: GET /favicon.ico - No such file or directory
+[Wed Dec 24 16:24:02 2025] [::1]:64317 Closing
+[Wed Dec 24 16:24:05 2025] [::1]:65053 Accepted
+[Wed Dec 24 16:24:05 2025] [::1]:49866 Accepted
+[Wed Dec 24 16:24:05 2025] [::1]:65053 [200]: GET /login.html
+[Wed Dec 24 16:24:05 2025] [::1]:65053 Closing
+[Wed Dec 24 16:24:05 2025] [::1]:49866 [200]: GET /css/style.css
+[Wed Dec 24 16:24:05 2025] [::1]:49866 Closing
+[Wed Dec 24 16:24:05 2025] [::1]:61251 Accepted
+[Wed Dec 24 16:24:05 2025] [::1]:61251 [200]: GET /js/login.js
+[Wed Dec 24 16:24:05 2025] [::1]:61251 Closing
+[Wed Dec 24 16:24:09 2025] [::1]:56559 Accepted
+[Wed Dec 24 16:24:09 2025] [::1]:65308 Accepted
+[Wed Dec 24 16:24:09 2025] [::1]:56559 [200]: GET /register.html
+[Wed Dec 24 16:24:09 2025] [::1]:56559 Closing
+[Wed Dec 24 16:24:09 2025] [::1]:65308 [200]: GET /css/style.css
+[Wed Dec 24 16:24:09 2025] [::1]:49204 Accepted
+[Wed Dec 24 16:24:09 2025] [::1]:49204 [200]: GET /js/register.js
+[Wed Dec 24 16:24:09 2025] [::1]:65308 Closing
+[Wed Dec 24 16:24:09 2025] [::1]:49204 Closing
+[Wed Dec 24 16:24:33 2025] [::1]:63005 Accepted
+[Wed Dec 24 16:24:33 2025] [::1]:63005 [200]: POST /php/register.php
+[Wed Dec 24 16:24:33 2025] [::1]:63005 Closing
+[Wed Dec 24 16:24:35 2025] [::1]:61548 Accepted
+[Wed Dec 24 16:24:35 2025] [::1]:61548 [200]: GET /login.html
+[Wed Dec 24 16:24:35 2025] [::1]:61548 Closing
+[Wed Dec 24 16:24:35 2025] [::1]:54869 Accepted
+[Wed Dec 24 16:24:35 2025] [::1]:50224 Accepted
+[Wed Dec 24 16:24:35 2025] [::1]:54869 [200]: GET /css/style.css
+[Wed Dec 24 16:24:35 2025] [::1]:54869 Closing
+[Wed Dec 24 16:24:35 2025] [::1]:50224 [200]: GET /js/login.js
+[Wed Dec 24 16:24:35 2025] [::1]:50224 Closing
+[Wed Dec 24 16:24:53 2025] [::1]:60996 Accepted
+[Wed Dec 24 16:24:53 2025] [::1]:60996 [200]: POST /php/login.php
+[Wed Dec 24 16:24:53 2025] [::1]:60996 Closing
+[Wed Dec 24 16:24:55 2025] [::1]:58116 Accepted
+[Wed Dec 24 16:24:55 2025] [::1]:55230 Accepted
+[Wed Dec 24 16:24:55 2025] [::1]:58116 [200]: GET /profile.html
+[Wed Dec 24 16:24:55 2025] [::1]:58116 Closing
+[Wed Dec 24 16:24:55 2025] [::1]:55230 [200]: GET /css/style.css
+[Wed Dec 24 16:24:55 2025] [::1]:60854 Accepted
+[Wed Dec 24 16:24:55 2025] [::1]:60854 [200]: GET /js/profile.js
+[Wed Dec 24 16:24:55 2025] [::1]:55230 Closing
+[Wed Dec 24 16:24:55 2025] [::1]:60854 Closing
+[Wed Dec 24 16:24:55 2025] [::1]:53036 Accepted
+[Wed Dec 24 16:24:55 2025] [::1]:53036 [200]: POST /php/profile.php
+[Wed Dec 24 16:24:55 2025] [::1]:53036 Closing
+[Wed Dec 24 16:25:03 2025] [::1]:49851 Accepted
+[Wed Dec 24 16:25:03 2025] [::1]:59728 Accepted
+[Wed Dec 24 16:25:03 2025] [::1]:49851 [200]: GET /login.html
+[Wed Dec 24 16:25:03 2025] [::1]:49851 Closing
+[Wed Dec 24 16:25:03 2025] [::1]:59728 [200]: GET /css/style.css
+[Wed Dec 24 16:25:03 2025] [::1]:59728 Closing
+[Wed Dec 24 16:25:03 2025] [::1]:58009 Accepted
+[Wed Dec 24 16:25:03 2025] [::1]:58009 [200]: GET /js/login.js
+[Wed Dec 24 16:25:03 2025] [::1]:58009 Closing
+[Wed Dec 24 16:25:13 2025] [::1]:63099 Accepted
+[Wed Dec 24 16:25:13 2025] [::1]:63099 [200]: GET /login.html
+[Wed Dec 24 16:25:13 2025] [::1]:52675 Accepted
+[Wed Dec 24 16:25:13 2025] [::1]:63099 Closing
+[Wed Dec 24 16:25:13 2025] [::1]:52675 [200]: GET /css/style.css
+[Wed Dec 24 16:25:13 2025] [::1]:52675 Closing
+[Wed Dec 24 16:25:13 2025] [::1]:55705 Accepted
+[Wed Dec 24 16:25:13 2025] [::1]:55705 [200]: GET /js/login.js
+[Wed Dec 24 16:25:13 2025] [::1]:55705 Closing
+[Wed Dec 24 16:25:26 2025] [::1]:60424 Accepted
+[Wed Dec 24 16:25:26 2025] [::1]:60424 [200]: GET /index.html
+[Wed Dec 24 16:25:26 2025] [::1]:60424 Closing
+[Wed Dec 24 16:25:26 2025] [::1]:51519 Accepted
+[Wed Dec 24 16:25:26 2025] [::1]:61935 Accepted
+[Wed Dec 24 16:25:26 2025] [::1]:51519 [200]: GET /css/style.css
+[Wed Dec 24 16:25:26 2025] [::1]:51519 Closing
+[Wed Dec 24 16:25:27 2025] [::1]:61935 [404]: GET /favicon.ico - No such file or directory
+[Wed Dec 24 16:25:27 2025] [::1]:61935 Closing
