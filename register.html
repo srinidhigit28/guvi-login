@@ -3,92 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - GUVI Internship</title>
+    <title>Register - Portal Connect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .card {
-            animation: slideUp 0.6s ease-out;
-        }
-
-        .form-label {
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        .form-control {
-            transition: all 0.3s ease;
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        .form-control:focus {
-            border-color: #4664c8;
-            box-shadow: 0 0 0 0.2rem rgba(70, 100, 200, 0.15);
-            transform: translateY(-2px);
-        }
-
-        #registerBtn {
-            transition: all 0.3s ease;
-            animation: slideUp 0.6s ease-out 0.4s both;
-        }
-
-        #registerBtn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(70, 100, 200, 0.3);
-        }
-
-        .text-center.text-muted {
-            animation: fadeIn 0.6s ease-out 0.5s both;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center align-items-center min-vh-100">
-            <div class="col-md-5">
-                <div class="card shadow-lg p-4">
-                    <h2 class="text-center mb-4 text-primary">Create Account</h2>
-                    
-                    <div class="alert alert-danger d-none" id="registerError" role="alert"></div>
-                    <div class="alert alert-success d-none" id="registerSuccess" role="alert"></div>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2 class="auth-title">Portal Connect</h2>
+            <p class="auth-subtitle">Unlock Your Potential</p>
+            
+            <div class="alert alert-danger d-none" id="registerError" role="alert"></div>
+            <div class="alert alert-success d-none" id="registerSuccess" role="alert"></div>
 
-                    <div class="mb-3">
-                        <label for="registerEmail" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="registerEmail" placeholder="Enter your email">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="registerPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="registerPassword" placeholder="Enter password (min 6 characters)">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password">
-                    </div>
-
-                    <button class="btn btn-primary w-100 mb-3" id="registerBtn" type="button">Register</button>
-
-                    <p class="text-center text-muted">
-                        Already have an account? <a href="login.html" class="text-decoration-none">Login here</a>
-                    </p>
-                </div>
+            <div class="mb-4">
+                <label for="registerEmail" class="form-label">Email</label>
+                <input type="email" class="form-control auth-input" id="registerEmail" placeholder="Enter your email">
+                <small class="form-text text-muted">Email must include numbers and special characters (example: user12@mail.com)</small>
             </div>
+
+            <div class="mb-4">
+                <label for="registerPassword" class="form-label">Password</label>
+                <input type="password" class="form-control auth-input" id="registerPassword" placeholder="Enter password">
+                <small class="form-text text-muted">Password must contain at least one capital letter and one number</small>
+            </div>
+
+            <div class="mb-4">
+                <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control auth-input" id="registerConfirmPassword" placeholder="Confirm password">
+            </div>
+
+            <button class="btn btn-primary w-100 auth-btn mb-3" id="registerBtn" type="button">Create an Account</button>
+
+            <p class="text-center text-muted mt-4">
+                Already have an account? <a href="login.html" class="auth-link">Sign In</a>
+            </p>
         </div>
     </div>
 

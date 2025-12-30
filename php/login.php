@@ -35,8 +35,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 // MySQL database connection
 $host = '127.0.0.1';
-$username = 'guvi_user';
-$password_db = 'SecurePass#123';
+$username = 'root';
+$password_db = '';
 $database = 'guvi_internship';
 
 // Create connection using mysqli with TCP protocol
