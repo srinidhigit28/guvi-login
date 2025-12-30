@@ -134,6 +134,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="js/login.js"></script>
     <script>
+        // Detect if page is opened via file:// instead of http://
+        if (window.location.protocol === 'file:') {
+            alert('⚠️ ERROR FIX: Please run START_SERVER.bat first!\n\nThen visit: http://localhost:8000/login.html\n\nDo NOT open HTML files directly - they need PHP server!');
+        }
+
         // Handle smooth transition to other pages
         document.querySelectorAll('.transition-link').forEach(link => {
             link.addEventListener('click', function(e) {
