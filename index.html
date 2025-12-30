@@ -13,7 +13,6 @@
             --bg-dark: #0f172a;
         }
 
-        /* Initial state for the fade-in effect */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-dark);
@@ -24,17 +23,6 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out; /* Smooth page entrance */
-        }
-
-        body.loaded {
-            opacity: 1;
-        }
-
-        /* Page Fade-Out Class */
-        .fade-out {
-            opacity: 0 !important;
         }
 
         .glass-card {
@@ -90,10 +78,9 @@
         <div class="row justify-content-center">
             <div class="col-md-5">
                 <div class="glass-card p-5 text-center">
-                    <h1 class="display-6 brand-text mb-2">GUVI</h1>
-                    <p class="h5 fw-light text-white mb-4">Profile Management</p>
+                    <h1 class="display-6 brand-text mb-4">GUVI</h1>
                     
-                    <p class="text-muted mb-5 px-3">
+                    <p class="text-white-50 mb-5 px-3">
                         Join a community of 1M+ learners. Master full-stack skills with industry-vetted projects.
                     </p>
                     
@@ -107,24 +94,12 @@
     </div>
 
     <script>
-        // Trigger page fade-in on load
-        window.addEventListener('DOMContentLoaded', () => {
-            document.body.classList.add('loaded');
-        });
-
         // Handle smooth transition to other pages
         document.querySelectorAll('.transition-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetUrl = this.href;
-                
-                // Apply fade-out
-                document.body.classList.add('fade-out');
-                
-                // Wait for animation to finish before navigating
-                setTimeout(() => {
-                    window.location.href = targetUrl;
-                }, 600); 
+                window.location.href = targetUrl;
             });
         });
     </script>

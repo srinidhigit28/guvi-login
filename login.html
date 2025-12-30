@@ -23,8 +23,6 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
         }
 
         body.loaded {
@@ -136,24 +134,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="js/login.js"></script>
     <script>
-        // Trigger page fade-in on load
-        window.addEventListener('DOMContentLoaded', () => {
-            document.body.classList.add('loaded');
-        });
-
         // Handle smooth transition to other pages
         document.querySelectorAll('.transition-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetUrl = this.href;
-                
-                // Apply fade-out
-                document.body.classList.add('fade-out');
-                
-                // Wait for animation to finish before navigating
-                setTimeout(() => {
-                    window.location.href = targetUrl;
-                }, 600); 
+                window.location.href = targetUrl;
             });
         });
     </script>
