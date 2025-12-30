@@ -3,26 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUVI Internship - Welcome</title>
+    <title>GUVI Internship - Portal Connect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Page transition animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .portal-container {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .community-section {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .form-group {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .form-group:nth-child(1) { animation-delay: 0.1s; }
+        .form-group:nth-child(2) { animation-delay: 0.2s; }
+        .form-group:nth-child(3) { animation-delay: 0.3s; }
+        .form-group:nth-child(4) { animation-delay: 0.4s; }
+        .btn-submit { animation: slideUp 0.6s ease-out 0.5s both; }
+
+        /* Button hover effects */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(70, 100, 200, 0.3);
+        }
+
+        /* Input field focus animations */
+        .form-control {
+            transition: all 0.3s ease;
+            border-color: #e9ecef;
+        }
+
+        .form-control:focus {
+            border-color: #4664c8;
+            box-shadow: 0 0 0 0.2rem rgba(70, 100, 200, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Community benefits fade-in */
+        .benefit-item {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .benefit-item:nth-child(1) { animation-delay: 0.2s; }
+        .benefit-item:nth-child(2) { animation-delay: 0.4s; }
+        .benefit-item:nth-child(3) { animation-delay: 0.6s; }
+        .benefit-item:nth-child(4) { animation-delay: 0.8s; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center align-items-center min-vh-100">
-            <div class="col-md-6">
-                <div class="card shadow-lg p-5 text-center">
-                    <h1 class="mb-4 text-primary">GUVI Internship</h1>
-                    <p class="lead mb-4">Profile Management</p>
-                    <p class="text-muted mb-5">A complete full-stack application for user management</p>
-                    <div class="d-grid gap-2">
-                        <a href="register.html" class="btn btn-primary btn-lg">Create an Account</a>
-                        <a href="login.html" class="btn btn-outline-primary btn-lg">Sign In</a>
+    <div class="container-fluid min-vh-100">
+        <div class="row h-100 g-0 align-items-center">
+            <!-- Left Section: Community Benefits -->
+            <div class="col-lg-6 bg-dark text-white p-5 community-section d-none d-lg-flex flex-column justify-content-center">
+                <h3 class="mb-4">Join the GUVI Community:</h3>
+                <div class="benefit-item mb-4">
+                    <div class="mb-2">
+                        <i class="fas fa-home me-3" style="font-size: 1.5rem;"></i>
+                        <strong>1,000+ Global Hiring Partners.</strong>
+                    </div>
+                </div>
+                <div class="benefit-item mb-4">
+                    <div class="mb-2">
+                        <i class="fas fa-map-marker-alt me-3" style="font-size: 1.5rem;"></i>
+                        <strong>1,500+ Coding Challenges via CodeKata.</strong>
+                    </div>
+                </div>
+                <div class="benefit-item mb-4">
+                    <div class="mb-2">
+                        <i class="fas fa-headset me-3" style="font-size: 1.5rem;"></i>
+                        <strong>24/7 Expert Doubt Resolution.</strong>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="mb-2">
+                        <i class="fas fa-shield-alt me-3" style="font-size: 1.5rem;"></i>
+                        <strong>Risk-Free: Start with a week refundable trial</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section: Portal Connect Form -->
+            <div class="col-lg-6 p-5 portal-container d-flex justify-content-center align-items-center">
+                <div class="w-100" style="max-width: 450px;">
+                    <h2 class="text-center mb-2 text-primary fw-bold">Portal Connect</h2>
+                    <p class="text-center text-muted mb-5">Unlock Your Potential</p>
+
+                    <div id="authContainer">
+                        <!-- Auth Selection Buttons -->
+                        <div class="d-grid gap-3 mb-4" id="authButtons">
+                            <a href="register.html" class="btn btn-primary btn-lg">Create an Account</a>
+                            <a href="login.html" class="btn btn-outline-primary btn-lg">Sign In</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </body>
 </html>

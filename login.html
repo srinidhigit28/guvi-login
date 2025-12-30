@@ -6,6 +6,56 @@
     <title>Login - GUVI Internship</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .form-label {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .form-control {
+            transition: all 0.3s ease;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .form-control:focus {
+            border-color: #4664c8;
+            box-shadow: 0 0 0 0.2rem rgba(70, 100, 200, 0.15);
+            transform: translateY(-2px);
+        }
+
+        #loginBtn {
+            transition: all 0.3s ease;
+            animation: slideUp 0.6s ease-out 0.3s both;
+        }
+
+        #loginBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(70, 100, 200, 0.3);
+        }
+
+        .text-center.text-muted {
+            animation: fadeIn 0.6s ease-out 0.4s both;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
