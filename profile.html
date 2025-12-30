@@ -3,16 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - GUVI Internship</title>
+    <title>Profile - GUVI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-grad: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-dark: #0f172a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(118, 75, 162, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(102, 126, 234, 0.2) 0px, transparent 50%);
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(30, 41, 59, 0.8) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            background: var(--primary-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        #logoutBtn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f8fafc;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        #logoutBtn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-text {
+            background: var(--primary-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* Form Labels */
+        .form-label {
+            color: rgba(248, 250, 252, 0.7);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /* Display Text */
+        .profile-value {
+            color: #f8fafc;
+            font-size: 1rem;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Glass Inputs */
+        .glass-input {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #f8fafc !important;
+            transition: all 0.3s ease;
+        }
+
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.12) !important;
+            border-color: #667eea !important;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
+            color: #f8fafc !important;
+        }
+
+        .glass-input::placeholder {
+            color: rgba(248, 250, 252, 0.5) !important;
+        }
+
+        /* Buttons */
+        .btn-grad {
+            background: var(--primary-grad);
+            border: none;
+            color: white;
+            padding: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-grad:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+
+        .btn-edit {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border: none;
+            color: #1f2937;
+            padding: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-edit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(251, 191, 36, 0.4);
+            color: #1f2937;
+        }
+
+        .btn-cancel {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f8fafc;
+            padding: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        /* Alerts */
+        .alert {
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .alert-danger {
+            background: rgba(239, 68, 68, 0.15) !important;
+            border: 1px solid rgba(239, 68, 68, 0.3) !important;
+            color: #fca5a5 !important;
+        }
+
+        .alert-success {
+            background: rgba(34, 197, 94, 0.15) !important;
+            border: 1px solid rgba(34, 197, 94, 0.3) !important;
+            color: #86efac !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <span class="navbar-brand fw-bold">GUVI Internship</span>
-            <button class="btn btn-light" id="logoutBtn">Logout</button>
+            <span class="navbar-brand fw-bold">GUVI</span>
+            <button class="btn" id="logoutBtn">Logout</button>
         </div>
     </nav>
 
@@ -20,8 +189,8 @@
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card shadow-lg p-4">
-                    <h2 class="text-center mb-4 text-primary">My Profile</h2>
+                <div class="glass-card p-5">
+                    <h2 class="text-center mb-4 brand-text">My Profile</h2>
                     
                     <div class="alert alert-danger d-none" id="profileError" role="alert"></div>
                     <div class="alert alert-success d-none" id="profileSuccess" role="alert"></div>
@@ -29,47 +198,47 @@
                     <!-- View Mode -->
                     <div id="viewMode">
                         <div class="mb-3">
-                            <label class="form-label fw-bold text-muted">Email Address</label>
-                            <p class="fs-6 border-bottom pb-2" id="displayEmail">-</p>
+                            <label class="form-label">Email Address</label>
+                            <p class="profile-value" id="displayEmail">-</p>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label fw-bold text-muted">Age</label>
-                            <p class="fs-6 border-bottom pb-2" id="displayAge">Not provided</p>
+                            <label class="form-label">Age</label>
+                            <p class="profile-value" id="displayAge">Not provided</p>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label fw-bold text-muted">Date of Birth</label>
-                            <p class="fs-6 border-bottom pb-2" id="displayDOB">Not provided</p>
+                            <label class="form-label">Date of Birth</label>
+                            <p class="profile-value" id="displayDOB">Not provided</p>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label fw-bold text-muted">Contact Number</label>
-                            <p class="fs-6 border-bottom pb-2" id="displayContact">Not provided</p>
+                            <label class="form-label">Contact Number</label>
+                            <p class="profile-value" id="displayContact">Not provided</p>
                         </div>
 
-                        <button class="btn btn-warning w-100" id="editBtn">Edit Profile</button>
+                        <button class="btn btn-edit w-100" id="editBtn">Edit Profile</button>
                     </div>
 
                     <!-- Edit Mode -->
                     <div id="editMode" class="d-none">
                         <div class="mb-3">
                             <label for="profileAge" class="form-label">Age</label>
-                            <input type="number" class="form-control" id="profileAge" placeholder="Enter age" min="1" max="120">
+                            <input type="number" class="form-control glass-input" id="profileAge" placeholder="Enter age" min="1" max="120">
                         </div>
 
                         <div class="mb-3">
                             <label for="profileDOB" class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" id="profileDOB">
+                            <input type="date" class="form-control glass-input" id="profileDOB">
                         </div>
 
                         <div class="mb-3">
                             <label for="profileContact" class="form-label">Contact Number</label>
-                            <input type="text" class="form-control" id="profileContact" placeholder="Enter 10-digit contact number">
+                            <input type="text" class="form-control glass-input" id="profileContact" placeholder="Enter 10-digit contact number">
                         </div>
 
-                        <button class="btn btn-success w-100 mb-2" id="saveBtn">Save Changes</button>
-                        <button class="btn btn-secondary w-100" id="cancelBtn">Cancel</button>
+                        <button class="btn btn-grad w-100 mb-2" id="saveBtn">Save Changes</button>
+                        <button class="btn btn-cancel w-100" id="cancelBtn">Cancel</button>
                     </div>
                 </div>
             </div>
