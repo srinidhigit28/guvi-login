@@ -81,6 +81,18 @@ http://localhost:8000
 
 ---
 
+## ✅ GUVI Compliance Checklist
+
+- AJAX-only; all requests use `$.ajax` with `type: 'POST'`
+- No php://input or JSON decode on request bodies; `$_POST` only
+- Prepared statements in PHP for MySQL queries
+- No PHP sessions; tokens stored in localStorage; Redis stub for server-side session data
+- No CORS headers added; same-origin only
+- Password rule enforced client-side: min 6 chars, includes capital letter, number, special character
+- Form field names/IDs unchanged (registerEmail, registerPassword, registerConfirmPassword, loginEmail, loginPassword)
+
+---
+
 ## 🌐 Live Sites
 
 - **AWS EC2:** http://100.48.79.82/

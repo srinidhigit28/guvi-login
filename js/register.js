@@ -34,8 +34,10 @@ $(document).ready(function() {
             return;
         }
 
-        if (password.length < 6) {
-            showError('Password must be at least 6 characters');
+        if (!isStrongPassword(password)) {
+            const msg = 'Password must be at least 6 characters and include a capital letter, a number, and a special character.';
+            alert(msg);
+            showError(msg);
             return;
         }
 
@@ -84,6 +86,14 @@ $(document).ready(function() {
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    }
+
+    // Password strength helper function
+    function isStrongPassword(pwd) {
+        const hasUpper = /[A-Z]/.test(pwd);
+        const hasNumber = /\d/.test(pwd);
+        const hasSpecial = /[!@#$%^&*(),.?":{}|<>_\-]/.test(pwd);
+        return pwd.length >= 6 && hasUpper && hasNumber && hasSpecial;
     }
 
     // Show error message
