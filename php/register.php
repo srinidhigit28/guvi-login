@@ -45,8 +45,8 @@ if (strlen($password) < 6) {
 
 // MySQL database connection
 $host = '127.0.0.1';
-$username = 'root';
-$password_db = '';
+$username = 'guvi_user';
+$password_db = 'SecurePass#123';
 $database = 'guvi_internship';
 
 // Create connection using mysqli with TCP protocol
