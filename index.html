@@ -131,11 +131,58 @@
                     <p class="text-center text-muted mb-5">Unlock Your Potential</p>
 
                     <div id="authContainer">
-                        <!-- Auth Selection Buttons -->
-                        <div class="d-grid gap-3 mb-4" id="authButtons">
-                            <a href="register.html" class="btn btn-primary btn-lg">Create an Account</a>
-                            <a href="login.html" class="btn btn-outline-primary btn-lg">Sign In</a>
+                        <!-- Toggle Buttons -->
+                        <div class="btn-group w-100 mb-4" role="group">
+                            <input type="radio" class="btn-check" name="authMode" id="registerMode" value="register" checked>
+                            <label class="btn btn-outline-primary" for="registerMode">Register</label>
+
+                            <input type="radio" class="btn-check" name="authMode" id="loginMode" value="login">
+                            <label class="btn btn-outline-primary" for="loginMode">Login</label>
                         </div>
+
+                        <!-- Register Form -->
+                        <form id="quickRegisterForm" class="auth-form">
+                            <div class="form-group mb-3">
+                                <label for="quickFullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="quickFullName" placeholder="Full Name">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="quickRegEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="quickRegEmail" placeholder="Email">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="quickRegPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="quickRegPassword" placeholder="Password">
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label for="quickRegConfirm" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="quickRegConfirm" placeholder="Confirm Password">
+                            </div>
+
+                            <button type="button" class="btn btn-submit btn-primary w-100" id="quickRegisterBtn">Create Account</button>
+                        </form>
+
+                        <!-- Login Form (Hidden by default) -->
+                        <form id="quickLoginForm" class="auth-form d-none">
+                            <div class="form-group mb-3">
+                                <label for="quickLoginEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="quickLoginEmail" placeholder="Email">
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label for="quickLoginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="quickLoginPassword" placeholder="Password">
+                            </div>
+
+                            <button type="button" class="btn btn-submit btn-primary w-100" id="quickLoginBtn">Sign In</button>
+                        </form>
+
+                        <!-- Alert Messages -->
+                        <div class="alert alert-danger d-none mt-3" id="authAlert" role="alert"></div>
+                        <div class="alert alert-success d-none mt-3" id="authSuccess" role="alert"></div>
                     </div>
                 </div>
             </div>
@@ -144,5 +191,120 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Toggle between Register and Login forms
+            $('input[name="authMode"]').on('change', function() {
+                if ($(this).val() === 'register') {
+                    $('#quickRegisterForm').removeClass('d-none');
+                    $('#quickLoginForm').addClass('d-none');
+                } else {
+                    $('#quickRegisterForm').addClass('d-none');
+                    $('#quickLoginForm').removeClass('d-none');
+                }
+                $('#authAlert').addClass('d-none');
+                $('#authSuccess').addClass('d-none');
+            });
+
+            // Quick Register
+            $('#quickRegisterBtn').on('click', function() {
+                const fullName = $('#quickFullName').val();
+                const email = $('#quickRegEmail').val();
+                const password = $('#quickRegPassword').val();
+                const confirmPassword = $('#quickRegConfirm').val();
+
+                if (!fullName || !email || !password || !confirmPassword) {
+                    showAlert('All fields are required', 'danger');
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    showAlert('Passwords do not match', 'danger');
+                    return;
+                }
+
+                if (password.length < 6) {
+                    showAlert('Password must be at least 6 characters', 'danger');
+                    return;
+                }
+
+                $.ajax({
+                    url: 'php/register.php',
+                    type: 'POST',
+                    data: {
+                        email: email,
+                        password: password
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            showAlert('Registration successful! Redirecting to login...', 'success');
+                            setTimeout(function() {
+                                $('#registerMode').prop('checked', false);
+                                $('#loginMode').prop('checked', true).change();
+                                $('#quickFullName').val('');
+                                $('#quickRegEmail').val('');
+                                $('#quickRegPassword').val('');
+                                $('#quickRegConfirm').val('');
+                                $('#quickLoginEmail').val(email);
+                            }, 1000);
+                        } else {
+                            showAlert(response.message || 'Registration failed', 'danger');
+                        }
+                    },
+                    error: function() {
+                        showAlert('Error during registration', 'danger');
+                    }
+                });
+            });
+
+            // Quick Login
+            $('#quickLoginBtn').on('click', function() {
+                const email = $('#quickLoginEmail').val();
+                const password = $('#quickLoginPassword').val();
+
+                if (!email || !password) {
+                    showAlert('Email and password are required', 'danger');
+                    return;
+                }
+
+                $.ajax({
+                    url: 'php/login.php',
+                    type: 'POST',
+                    data: {
+                        email: email,
+                        password: password
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            localStorage.setItem('sessionToken', response.token);
+                            showAlert('Login successful! Redirecting to profile...', 'success');
+                            setTimeout(function() {
+                                window.location.href = 'profile.html';
+                            }, 1000);
+                        } else {
+                            showAlert(response.message || 'Login failed', 'danger');
+                        }
+                    },
+                    error: function() {
+                        showAlert('Error during login', 'danger');
+                    }
+                });
+            });
+
+            function showAlert(message, type) {
+                const alertEl = type === 'success' ? '#authSuccess' : '#authAlert';
+                $(alertEl).text(message).removeClass('d-none');
+                if (type === 'success') {
+                    $('#authAlert').addClass('d-none');
+                } else {
+                    $('#authSuccess').addClass('d-none');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
