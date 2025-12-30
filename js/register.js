@@ -69,12 +69,12 @@ $(document).ready(function() {
                     }, 2000);
                 } else {
                     showError(response.message || 'Registration failed');
-                    $('#registerBtn').prop('disabled', false).text('Register');
+                    $('#registerBtn').prop('disabled', false).text('Create an Account');
                 }
             },
             error: function(xhr, status, error) {
                 showError('An error occurred. Please try again.');
-                $('#registerBtn').prop('disabled', false).text('Register');
+                $('#registerBtn').prop('disabled', false).text('Create an Account');
                 console.error('AJAX Error:', error);
             }
         });
