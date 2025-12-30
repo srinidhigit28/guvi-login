@@ -3,46 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUVI Internship - Portal Connect</title>
+    <title>GUVI Internship - Welcome</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-grad: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-dark: #0f172a;
+        }
+
+        /* Initial state for the fade-in effect */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(118, 75, 162, 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(102, 126, 234, 0.2) 0px, transparent 50%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out; /* Smooth page entrance */
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Page Fade-Out Class */
+        .fade-out {
+            opacity: 0 !important;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-text {
+            background: var(--primary-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .btn-custom {
+            padding: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-grad {
+            background: var(--primary-grad);
+            border: none;
+            color: white;
+        }
+
+        .btn-grad:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.4);
+            color: white;
+        }
+
+        .btn-outline-glass {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #cbd5e1;
+        }
+
+        .btn-outline-glass:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-color: white;
+        }
+    </style>
 </head>
-<body>
-    <div class="auth-container">
-        <div class="auth-card">
-            <h2 class="auth-title">Portal Connect</h2>
-            <p class="auth-subtitle">Unlock Your Potential</p>
-            
-            <div class="alert alert-danger d-none" id="registerError" role="alert"></div>
-            <div class="alert alert-success d-none" id="registerSuccess" role="alert"></div>
+<body id="page-body">
 
-            <div class="mb-4">
-                <label for="registerEmail" class="form-label">Email</label>
-                <input type="email" class="form-control auth-input" id="registerEmail" placeholder="Enter your email">
-                <small class="form-text text-muted">Email must include numbers and special characters (example: user12@mail.com)</small>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="glass-card p-5 text-center">
+                    <h1 class="display-6 brand-text mb-2">GUVI Internship</h1>
+                    <p class="h5 fw-light text-white-50 mb-4">Profile Management</p>
+                    
+                    <p class="text-muted mb-5 px-3">
+                        Join a community of 1M+ learners. Master full-stack skills with industry-vetted projects.
+                    </p>
+                    
+                    <div class="d-grid gap-3">
+                        <a href="register.html" class="btn btn-grad btn-custom transition-link">Create an Account</a>
+                        <a href="login.html" class="btn btn-outline-glass btn-custom transition-link">Sign In</a>
+                    </div>
+                </div>
             </div>
-
-            <div class="mb-4">
-                <label for="registerPassword" class="form-label">Password</label>
-                <input type="password" class="form-control auth-input" id="registerPassword" placeholder="Enter password">
-                <small class="form-text text-muted">Password must contain at least one capital letter and one number</small>
-            </div>
-
-            <div class="mb-4">
-                <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control auth-input" id="registerConfirmPassword" placeholder="Confirm password">
-            </div>
-
-            <button class="btn btn-primary w-100 auth-btn mb-3" id="registerBtn" type="button">Create an Account</button>
-
-            <p class="text-center text-muted mt-4">
-                Already have an account? <a href="login.html" class="auth-link">Sign In</a>
-            </p>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="js/register.js"></script>
+    <script>
+        // Trigger page fade-in on load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Handle smooth transition to other pages
+        document.querySelectorAll('.transition-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetUrl = this.href;
+                
+                // Apply fade-out
+                document.body.classList.add('fade-out');
+                
+                // Wait for animation to finish before navigating
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 600); 
+            });
+        });
+    </script>
 </body>
 </html>
