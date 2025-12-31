@@ -1,5 +1,17 @@
 # 🚀 GUVI Project - Quick Start Guide
 
+## ⚡ QUICK START (Easy Way)
+
+**Just double-click:** `START_PROJECT.bat`
+
+This single file will:
+- ✅ Fix MySQL port conflicts automatically
+- ✅ Start PHP development server
+- ✅ Open your browser to the project
+- ✅ Everything works!
+
+---
+
 ## ⚠️ STOP! READ THIS FIRST ⚠️
 
 **NEVER open .html files directly by double-clicking them!**
@@ -69,6 +81,19 @@ http://localhost:8000
 1. Find the existing command window and close it
 2. OR change port in START_SERVER.bat (change 8000 to 8001)
 3. Run START_SERVER.bat again
+
+### "MySQL Port 3306 in use" (XAMPP Error)
+**Cause:** MySQL is already running and blocking XAMPP
+
+**PERMANENT FIX:**
+1. **Double-click `FIX_MYSQL_PORT.bat`** (in project folder)
+2. This will stop conflicting MySQL processes
+3. Then start MySQL from XAMPP Control Panel
+4. MySQL will start successfully
+
+**OR use the complete startup:**
+1. **Double-click `START_PROJECT.bat`**
+2. This automatically fixes MySQL and starts everything
 
 ---
 
