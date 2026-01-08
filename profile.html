@@ -8,19 +8,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --primary-grad: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --bg-dark: #0f172a;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-dark);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(118, 75, 162, 0.2) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(102, 126, 234, 0.2) 0px, transparent 50%);
+            background: #1a1a1a;
             color: #f8fafc;
             min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(at 20% 50%, rgba(216, 67, 21, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 80%, rgba(139, 69, 19, 0.15) 0px, transparent 50%);
+            animation: gradientShift 8s ease-in-out infinite;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(at 50% 0%, rgba(230, 124, 115, 0.1) 0px, transparent 40%),
+                radial-gradient(at 100% 100%, rgba(160, 82, 45, 0.1) 0px, transparent 50%);
+            animation: gradientShift2 12s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background: 
+                    radial-gradient(at 20% 50%, rgba(216, 67, 21, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 80% 80%, rgba(139, 69, 19, 0.15) 0px, transparent 50%);
+            }
+            50% {
+                background: 
+                    radial-gradient(at 80% 30%, rgba(216, 67, 21, 0.2) 0px, transparent 50%),
+                    radial-gradient(at 20% 70%, rgba(139, 69, 19, 0.2) 0px, transparent 50%);
+            }
+        }
+
+        @keyframes gradientShift2 {
+            0%, 100% {
+                background:
+                    radial-gradient(at 50% 0%, rgba(230, 124, 115, 0.1) 0px, transparent 40%),
+                    radial-gradient(at 100% 100%, rgba(160, 82, 45, 0.1) 0px, transparent 50%);
+            }
+            50% {
+                background:
+                    radial-gradient(at 30% 70%, rgba(230, 124, 115, 0.15) 0px, transparent 40%),
+                    radial-gradient(at 70% 30%, rgba(160, 82, 45, 0.15) 0px, transparent 50%);
+            }
         }
 
         /* Navbar Styling */
@@ -30,10 +84,24 @@
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 1rem 0;
+            position: relative;
+            z-index: 10;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .navbar-brand {
-            background: var(--primary-grad);
+            background: linear-gradient(135deg, #d84315 0%, #bf360c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
@@ -41,19 +109,36 @@
         }
 
         #logoutBtn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #f8fafc;
-            padding: 8px 20px;
+            background: linear-gradient(135deg, #d84315 0%, #bf360c 100%);
+            border: none;
+            color: white;
+            padding: 10px 25px;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         #logoutBtn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.3);
-            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(216, 67, 21, 0.4);
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
         }
 
         /* Glass Card */
@@ -64,10 +149,20 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 28px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.6s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .brand-text {
-            background: var(--primary-grad);
+            background: linear-gradient(135deg, #d84315 0%, #bf360c 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
@@ -100,8 +195,8 @@
 
         .glass-input:focus {
             background: rgba(255, 255, 255, 0.12) !important;
-            border-color: #667eea !important;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
+            border-color: #d84315 !important;
+            box-shadow: 0 0 0 3px rgba(216, 67, 21, 0.3) !important;
             color: #f8fafc !important;
         }
 
@@ -111,7 +206,7 @@
 
         /* Buttons */
         .btn-grad {
-            background: var(--primary-grad);
+            background: linear-gradient(135deg, #d84315 0%, #bf360c 100%);
             border: none;
             color: white;
             padding: 14px;
@@ -122,7 +217,7 @@
 
         .btn-grad:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 20px rgba(216, 67, 21, 0.4);
             color: white;
         }
 
@@ -161,6 +256,7 @@
         .alert {
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideDown 0.3s ease-out;
         }
 
         .alert-danger {

@@ -1,9 +1,5 @@
 # GUVI Internship Project - Complete Status & Action Plan
-
----
-
 ## ✅ CHECKLIST: PROJECT COMPLETION STATUS
-
 ### ✅ COMPLETED (100%)
 - [x] Project folder structure created
 - [x] HTML files (register.html, login.html, profile.html, index.html)

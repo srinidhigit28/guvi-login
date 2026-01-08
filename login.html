@@ -3,130 +3,403 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - GUVI Internship</title>
+    <title>Login - GUVI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --primary-grad: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --bg-dark: #0f172a;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-dark);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(118, 75, 162, 0.2) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(102, 126, 234, 0.2) 0px, transparent 50%);
+            background: #1a1a1a;
             color: #f8fafc;
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
         }
 
-        body.loaded {
-            opacity: 1;
+        /* Animated Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(at 20% 50%, rgba(216, 67, 21, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 80%, rgba(139, 69, 19, 0.15) 0px, transparent 50%);
+            animation: gradientShift 8s ease-in-out infinite;
+            z-index: -2;
         }
 
-        .fade-out {
-            opacity: 0 !important;
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(at 50% 0%, rgba(230, 124, 115, 0.1) 0px, transparent 40%),
+                radial-gradient(at 100% 100%, rgba(160, 82, 45, 0.1) 0px, transparent 50%);
+            animation: gradientShift2 12s ease-in-out infinite;
+            z-index: -1;
         }
 
-        .glass-card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 28px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        @keyframes gradientShift {
+            0%, 100% {
+                background: 
+                    radial-gradient(at 20% 50%, rgba(216, 67, 21, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 80% 80%, rgba(139, 69, 19, 0.15) 0px, transparent 50%);
+            }
+            50% {
+                background: 
+                    radial-gradient(at 80% 30%, rgba(216, 67, 21, 0.2) 0px, transparent 50%),
+                    radial-gradient(at 20% 70%, rgba(139, 69, 19, 0.2) 0px, transparent 50%);
+            }
         }
 
-        .brand-text {
-            background: var(--primary-grad);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @keyframes gradientShift2 {
+            0%, 100% {
+                background:
+                    radial-gradient(at 50% 0%, rgba(230, 124, 115, 0.1) 0px, transparent 40%),
+                    radial-gradient(at 100% 100%, rgba(160, 82, 45, 0.1) 0px, transparent 50%);
+            }
+            50% {
+                background:
+                    radial-gradient(at 30% 70%, rgba(230, 124, 115, 0.15) 0px, transparent 40%),
+                    radial-gradient(at 70% 30%, rgba(160, 82, 45, 0.15) 0px, transparent 50%);
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-wrapper {
+            display: flex;
+            background: #2a2a2a;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            height: 500px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-box {
+            position: relative;
+            width: 50%;
+            background: #1a1a1a;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .info-box {
+            position: relative;
+            width: 50%;
+            background: linear-gradient(135deg, #d84315 0%, #bf360c 50%, #8b4513 100%);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding-left: 90px;
+            padding-right: 60px;
+            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .info-box h2 {
+            font-size: 32px;
             font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 0.8s ease-out 0.2s both;
         }
 
-        .glass-input {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 14px 18px;
-            color: white;
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-box p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-box h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #fff;
+            animation: fadeIn 0.6s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 25px;
+            animation: slideInLeft 0.6s ease-out backwards;
+        }
+
+        .input-box:nth-child(2) { animation-delay: 0.4s; }
+        .input-box:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            padding: 10px 0;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
             transition: all 0.3s ease;
         }
 
-        .glass-input:focus {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-            color: white;
-            outline: none;
+        .input-box input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
 
-        .glass-input::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+        .input-box input:focus {
+            border-bottom-color: #d84315;
+            box-shadow: 0 1px 0 #d84315;
         }
 
-        .btn-grad {
-            background: var(--primary-grad);
+        .input-box i {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .input-box input:focus ~ i {
+            color: #d84315;
+        }
+
+        #loginBtn {
+            width: 100%;
+            height: 50px;
             border: none;
+            outline: none;
+            background: linear-gradient(135deg, #d84315 0%, #bf360c 100%);
             color: white;
-            padding: 14px;
+            font-size: 16px;
             font-weight: 600;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            animation: slideInLeft 0.6s ease-out 0.6s backwards;
         }
 
-        .btn-grad:hover {
+        #loginBtn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.4);
-            color: white;
+            box-shadow: 0 10px 20px rgba(216, 67, 21, 0.4);
         }
 
-        .link-light {
-            color: #a5b4fc;
+        #loginBtn:active {
+            transform: translateY(-1px);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 0.6s ease-out 0.7s both;
+        }
+
+        .signup-link p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #ff9800;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .link-light:hover {
-            color: #667eea;
+        .signup-link a:hover {
+            color: #ffb74d;
+            text-decoration: underline;
         }
 
         .alert {
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alert-danger {
+            background: rgba(220, 53, 69, 0.15) !important;
+            border: 1px solid rgba(220, 53, 69, 0.3) !important;
+            color: #ff7675 !important;
+        }
+
+        .alert-success {
+            background: rgba(40, 167, 69, 0.15) !important;
+            border: 1px solid rgba(40, 167, 69, 0.3) !important;
+            color: #55efc4 !important;
+        }
+
+        @media (max-width: 768px) {
+            .login-wrapper {
+                flex-direction: column;
+                height: auto;
+                border-radius: 15px;
+            }
+
+            .form-box,
+            .info-box {
+                width: 100%;
+                padding: 40px 30px;
+            }
+
+            .info-box {
+                clip-path: none;
+                padding: 30px;
+            }
+
+            .info-box h2 {
+                font-size: 24px;
+            }
+
+            .form-box {
+                min-height: auto;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-5">
-                <div class="glass-card p-5">
-                    <h1 class="h3 brand-text mb-2 text-center">Welcome Back</h1>
-                    <p class="text-center text-white mb-4">Sign in to continue</p>
-                    
-                    <div class="alert alert-danger d-none" id="loginError" role="alert"></div>
-                    <div class="alert alert-success d-none" id="loginSuccess" role="alert"></div>
-                    
-                    <div class="mb-3">
-                        <input type="email" class="form-control glass-input" id="loginEmail" placeholder="Email address" required>
-                    </div>
-                    <div class="mb-4">
-                        <input type="password" class="form-control glass-input" id="loginPassword" placeholder="Password" required>
-                    </div>
-                    <button class="btn btn-grad w-100" id="loginBtn" type="button">Sign In</button>
-                    
-                    <p class="text-center mt-4 mb-0">
-                        <span class="text-white-50">Don't have an account?</span>
-                        <a href="register.html" class="link-light ms-2 transition-link fw-bold">Create one</a>
-                    </p>
+        <div class="login-wrapper">
+            <!-- Form Box -->
+            <div class="form-box">
+                <h1>Login</h1>
+
+                <div class="alert alert-danger d-none" id="loginError" role="alert"></div>
+                <div class="alert alert-success d-none" id="loginSuccess" role="alert"></div>
+
+                <div class="input-box">
+                    <input type="email" id="loginEmail" placeholder="Username" required>
+                    <i class="fas fa-user"></i>
                 </div>
+
+                <div class="input-box">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <button id="loginBtn" type="button">Login</button>
+
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="register.html" class="transition-link">Create one</a></p>
+                </div>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <h2>WELCOME BACK!</h2>
+                <p>We are happy to have you with us again. If you need anything, we are here to help.</p>
             </div>
         </div>
     </div>
