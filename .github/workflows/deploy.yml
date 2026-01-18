@@ -1,0 +1,36 @@
+name: Deploy to EC2 via SSH
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Copy files to EC2 and deploy
+        uses: appleboy/scp-action@v0.1.5
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: ${{ secrets.EC2_SSH_PORT }}
+          source: "./"
+          target: "/home/${{ secrets.EC2_USER }}/deploy_tmp"
+
+      - name: SSH and move files into webroot
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: ${{ secrets.EC2_SSH_PORT }}
+          script: |
+            sudo rm -rf /var/www/html/guvi-login_old || true
+            sudo mv /var/www/html/guvi-login /var/www/html/guvi-login_old || true
+            sudo mv /home/${{ secrets.EC2_USER }}/deploy_tmp /var/www/html/guvi-login
+            sudo chown -R www-data:www-data /var/www/html/guvi-login
+            sudo systemctl restart apache2 || true
